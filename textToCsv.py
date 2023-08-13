@@ -1,13 +1,5 @@
 import csv 
 
-#initializing constants for the paths for files 
-READ_PATH_HEAD_DATA = r"C:\Users\ARISE_students\VR_data\head_data.txt"
-WRITE_PATH_HEAD_DATA = r"C:\Users\ARISE_students\VR_data\head_data_csv.csv"
-READ_PATH_LEFT_EYE_DATA = r"C:\Users\ARISE_students\VR_data\left_eye_data.txt"
-WRITE_PATH_LEFT_EYE_DATA = r"C:\Users\ARISE_students\VR_data\left_eye_data_csv.csv"
-READ_PATH_RIGHT_EYE_DATA = r"C:\Users\ARISE_students\VR_data\right_eye_data.txt"
-WRITE_PATH_RIGHT_EYE_DATA = r"C:\Users\ARISE_students\VR_data\right_eye_data_csv.csv"
-
 def txtToCsv(r_path : str, w_path : str, eyeData = False):
     txt_list = []
     with open(r_path, "r") as f_read: #text file is "f"
@@ -74,12 +66,25 @@ def txtToCsv(r_path : str, w_path : str, eyeData = False):
                 
                     data_writer.writerow(dictDump)
                     dictDump.clear()
+                    
+                    
+def timeTxtToCsv(r_path : str, w_path : str):
+    txt_list = []
+    with open(r_path, "r") as f_read: #text file is "f"
+        data_reader = csv.reader(f_read) #make sure delimiter is set to empty string for commas to appear 
+        for row in data_reader:
+            txt_list.append("".join(row).split("\n"))
+        
             
-if __name__ == "__main__":
-    txtToCsv(READ_PATH_HEAD_DATA, WRITE_PATH_HEAD_DATA, eyeData = False)
-    txtToCsv(READ_PATH_LEFT_EYE_DATA, WRITE_PATH_LEFT_EYE_DATA, eyeData = True)
-    txtToCsv(READ_PATH_RIGHT_EYE_DATA, WRITE_PATH_RIGHT_EYE_DATA, eyeData = True)
-    print("Script executed")
+    txt_list.pop(0)
+    
+    with open(w_path, "w") as f_write:
+        fieldnames = "t"
+        data_writer = csv.writer(f_write, dialect = "excel", lineterminator = '\n')
+        for idx in range(len(txt_list)):
+            data_writer.writerow(txt_list[idx][0])
+      
+
         
     
     

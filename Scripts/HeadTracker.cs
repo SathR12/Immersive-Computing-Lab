@@ -44,7 +44,7 @@ public class HeadTracker : MonoBehaviour
         File.AppendAllText(
             @"C:\Users\ARISE_students\VR_data\head_data.txt",
             "\nHead Position: " + headPosition +
-            "\nHead Rotation: " + headRotation
+            "\nHead Rotation: " + headRotation 
             );
 
         */

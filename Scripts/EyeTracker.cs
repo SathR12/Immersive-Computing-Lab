@@ -59,7 +59,7 @@ public class EyeTracker : MonoBehaviour
             Debug.Log("Device is not supported or not active");
         }
 
-        /*
+        
          File.AppendAllText(
             @"C:\Users\ARISE_students\VR_data\eye_data.txt", 
             "\nLeft Eye Position: " + leftEyePosition + 
@@ -67,7 +67,7 @@ public class EyeTracker : MonoBehaviour
             "\nLeft Eye Rotation: " + leftEyeRotation.eulerAngles + 
             "\nRight Eye Rotation: " + rightEyeRotation.eulerAngles
             );
-        */
+        
 
         
         File.AppendAllText(
@@ -78,8 +78,8 @@ public class EyeTracker : MonoBehaviour
 
         File.AppendAllText(
             @"C:\Users\ARISE_students\VR_data\right_eye_data.txt",
-            leftEyePosition + "\n" +
-            leftEyeRotation.eulerAngles + "\n"
+            rightEyePosition + "\n" +
+            rightEyeRotation.eulerAngles + "\n"
             );
 
     }
