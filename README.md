@@ -10,4 +10,4 @@ Run the unity project and attempt to read the text using the Vive VR headset. Af
 
 ## ARISE Research Poster 
 
-[NYU ARISE Poster.pdf](https://github.com/SathR12/Immersive-Computing-Lab/files/12328555/NYU.ARISE.Poster.pdf)
+![Final NYU ARISE Poster](https://github.com/SathR12/Immersive-Computing-Lab/assets/74515743/c7a70cb0-ee1f-4186-a6e0-d9cf3b5fc533)
